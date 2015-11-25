@@ -1,0 +1,28 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"All Autocomplete",
+		"BeautifyRuby",
+		"DashDoc",
+		"DocBlockr",
+		"GitGutter",
+		"Keymaps",
+		"Package Control",
+		"Quick File Move",
+		"RailsCasts Colour Scheme",
+		"RailsGoToSpec",
+		"RSpec",
+		"rspec-snippets",
+		"SublimeLinter",
+		"SublimeLinter-rubocop",
+		"SublimeLinter-ruby",
+		"Surround",
+		"Trimmer",
+		"Vintage Surround"
+	]
+}
