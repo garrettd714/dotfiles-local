@@ -1,0 +1,41 @@
+# ~/.tmuxinator/hyfn8.yml
+# you can make as many tabs as you wish...
+
+project_name: HYFN8-1
+project_root: ~/Projects/hyfn8-1
+pre_window: rbenv shell 1.9.3-p286
+windows:
+  - server1:
+      layout: even-horizontal
+      panes:
+        - be rails s Puma --port 3001
+  - console1:
+      layout: even-horizontal
+      panes:
+        - be rails c
+  - logs1: 
+      layout: even-horizontal
+      panes:
+        - tail -f log/development.log
+        # - tail -f log/bullet.log
+  - guard1: 
+      layout: even-horizontal
+      panes:
+        - sp stop
+  - sidekiq1: 
+      layout: even-horizontal
+      panes:
+        - redis-cli flushall
+  - shell1: 
+      layout: even-horizontal
+      panes:
+        - #
+  # - heroku_c: 
+  #     layout: even-horizontal
+  #     panes:
+  #       - #heroku run rails console --app hyfn8r-s
+  # - heroku_l: 
+  #     layout: even-horizontal
+  #     panes:
+  #       - #heroku logs --app hyfn8-prod --tail --ps web
+  #       - #heroku logs --app hyfn8r-s --tail --ps other_queue
