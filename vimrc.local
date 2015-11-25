@@ -1,0 +1,34 @@
+set showmode                                "Display the mode you're in
+set backspace=indent,eol,start              "Intuitive backspacing
+set ignorecase smartcase                    "Case-Insentive searching
+set relativenumber                          "Show relative line numbers for easier navigation
+set wrap                                    "Turn on line wrapping
+set scrolloff=3                             "Show 3 lines of context around the cursor
+set visualbell                              "No beeping
+set directory=$HOME/.vim/tmp//,.            "Keep swap files in one location
+set autoindent
+set showmatch
+set cursorline
+"Change escape to jj
+inoremap jj <ESC>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OPEN FILES IN DIRECTORY OF CURRENT FILE
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" " RENAME CURRENT FILE
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'))
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>n :call RenameFile()<cr>
