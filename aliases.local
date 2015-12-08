@@ -1,12 +1,13 @@
+# Sidekiq
+alias ps kill_sidekiq="ps -ef | grep sidekiq | grep -v grep | awk '{print $2}' | xargs kill -9"
+
 # Bundler
 alias be="bundle exec"
 
 # Rails
 alias sp="spring"
-alias dbm="rake db:migrate db:test:prepare"
-alias dtp="rake db:test:prepare"
 
-#hyfn8 aliases
+# hyfn8 remote aliases
 alias h8pc='heroku run console -a hyfn8-prod'
 alias h8sc='heroku run console -a hyfn8r-s'
 alias h8ppg='heroku pg:psql HEROKU_POSTGRESQL_ORANGE_URL -a hyfn8-prod'
@@ -14,6 +15,6 @@ alias h8spg='heroku pg:psql HEROKU_POSTGRESQL_NAVY_URL -a hyfn8r-s'
 alias h8pl='heroku logs --ps web -a hyfn8-prod -t'
 alias h8sl='heroku logs --ps web -a hyfn8r-s -t'
 
-#sidekiq alias
-alias bes='bundle exec sidekiq -q default -q fb_campaign_populator -q fb_ad_campaign_crud -q fb_ad_image,2 -q fb_ads -q fb_ads_sync -q fb_audience -q fb_audience_parse -q fb_audience_send -q fb_page_sync -q fb_pixel -q fb_ad_bulk -q fb_ads_mass_edit -q fb_ad_campaign_group_duplicate -q fb_ads_csv_publish -q fb_ads_csv_import -q ad_scheduled_post -q fb_ads_automated_reports -q fb_ad_stats_scraper -q fb_ad_metrics -q fb_ad_campaign_group_qtr_stats_scraper -q fb_ads_generate_report -q fb_ad_creative_crud -q scheduled_post_retrieve_video -q fb_ads_remote_metrics -q fb_ad_backfill'
+# hyfn8 sidekiq alias
+alias bes='bundle exec sidekiq -q default -q fb_campaign_populator -q fb_ad_campaign_crud -q fb_ad_image,2 -q fb_ads  -q fb_audience -q fb_pixel -q fb_ad_bulk -q fb_ad_campaign_group_duplicate -q fb_ads_csv_publish -q fb_ads_csv_import -q fb_ads_generate_report -q fb_ad_creative_crud -q fb_ad_campaign_duplicate -q fb_ads_rf_crud -q fb_ads_interests -q fb_ads_behaviors -q fb_ads_zips -q fb_ads_regions -q fb_ads_cities -q fb_ads_csv_export -q fb_ads_kpis -q fb_ads_video_transfer -q fb_ads_sync -q fb_page_sync -q fb_audience_sync -q fb_ad_stats_scraper  -q fb_ad_backfill -q fb_ads_remote_metrics,0  -q accounting_create_report -q accounting_save_insights'
 
