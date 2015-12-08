@@ -3,7 +3,7 @@
 
 project_name: HYFN8-1
 project_root: ~/Projects/hyfn8-1
-pre_window: rbenv shell 1.9.3-p286
+pre_window: rbenv shell 1.9.3-p551
 windows:
   - server1:
       layout: even-horizontal
@@ -30,12 +30,8 @@ windows:
       layout: even-horizontal
       panes:
         - #
-  # - heroku_c: 
-  #     layout: even-horizontal
-  #     panes:
-  #       - #heroku run rails console --app hyfn8r-s
-  # - heroku_l: 
-  #     layout: even-horizontal
-  #     panes:
-  #       - #heroku logs --app hyfn8-prod --tail --ps web
-  #       - #heroku logs --app hyfn8r-s --tail --ps other_queue
+  - pandora: 
+      layout: even-horizontal
+      panes:
+        - #
+
