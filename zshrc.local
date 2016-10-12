@@ -1,4 +1,5 @@
 # zshrc.local
 
 export PATH="$HOME/.bin:$PATH"
+export EDITOR="subl -w"
 eval "$(rbenv init - --no-rehash zsh)"
